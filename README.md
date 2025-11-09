@@ -6,9 +6,10 @@
 * HASNA MARITSA / 103102400059
 * LASMAULI YUNITA / 103102400026
 ## Kaggle 
-Link : https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009
+Link : https://www.kaggle.com/datasets/yasserh/wine-quality-dataset
 
 ## About Dataset
+
 Dataset ini berisi data kualitas wine (Vinho Verde) dengan variabel target quality (skor 0–10) dan fitur-fitur fisikokimia hasil uji laboratorium. Berikut penjelasan tiap kolom:
 * fixed acidity — Keasaman tetap (terutama asam tartarat) yang tidak mudah menguap; memengaruhi rasa segar/struktur.
 * volatile acidity — Keasaman volatil (terutama asam asetat). Nilai tinggi biasanya menurunkan kualitas (aroma cuka).
