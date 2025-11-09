@@ -343,7 +343,24 @@ f-test score :  99.0243684603365
 P-value :  1.4132637180821072e-96
 Tolak H0
 
-#### Kesimpulan:
-Dari output diatas, diperoleh p-value kurang dari 0,05 sehingga hypothesis null ditolak dan dapat disimpulkan bahwa model regresi dari ketiga variabel independen dan variabel dependen quality (Y) layak digunakan.
+### Kesimpulan:
+
+Inti dari program ini adalah untuk **memprediksi skor kualitas wine (`quality`)** berdasarkan **fitur-fitur fisikokimia** (mis. alcohol, volatile acidity, sulphates, citric acid, total sulfur dioxide, dst.) pada dataset Wine Quality (Red).
+
+**Fungsi Utama Program ini:**  
+Program membangun **model Regresi Linear (Multiple Linear Regression, statsmodels OLS)** untuk menganalisis pengaruh tiap fitur kimia terhadap `quality` serta menghasilkan **prediksi skor kualitas**. Selain itu, program menyertakan **evaluasi dan diagnostik asumsi** (linearitas, normalitas residual, homoskedastisitas, dan multikolinearitas) agar interpretasi koefisien dan kesimpulan statistik lebih andal.
+
+**Manfaat Program ini:**
+- **Pemahaman Faktor Penentu Kualitas:** Koefisien model membantu menjelaskan arah dan besar pengaruh setiap fitur (contoh umum: `alcohol` cenderung berpengaruh **positif**, `volatile acidity` cenderung **negatif** terhadap `quality`). Ini bermanfaat untuk **quality control** dan **formulasi proses produksi**.
+- **Evaluasi Kinerja yang Jelas:** Program tidak hanya memprediksi, tetapi juga **mengevaluasi performa** menggunakan metrik seperti **R-squared** dan **RMSE**, serta **visualisasi** (Residuals vs Fitted, QQ-plot) dan uji formal (**Breusch–Pagan** untuk heteroskedastisitas, **Jarque–Bera** untuk normalitas residual). Hal ini memberi gambaran seberapa baik model merepresentasikan data.
+- **Dasar Pengambilan Keputusan Teknis:** Prediksi kualitas dan interpretasi koefisien dapat menjadi **alat bantu** untuk keputusan teknis (mis. penyesuaian parameter fermentasi/penyimpanan) dengan tetap mempertimbangkan bahwa kualitas wine dipengaruhi banyak faktor sensorik non-kimia.
+- **Landasan untuk Peningkatan Lanjutan:** Hasil baseline regresi linear dapat dikembangkan dengan:
+  - **Robust/Weighted OLS** atau **standard error robust (HC3)** saat terdeteksi heteroskedastisitas.
+  - **Transformasi fitur** untuk variabel sangat skew (mis. `log1p` pada `total sulfur dioxide`).
+  - **Regularisasi** (Ridge/Lasso) dan **rekayasa fitur** (interaksi/polinomial ringan).
+  - **Validasi silang** (train/test split atau k-fold) untuk mengukur **generalization error** yang lebih tepercaya.
+
+Secara keseluruhan, program memberikan **baseline yang interpretatif** untuk memodelkan dan memprediksi `quality`, sekaligus **kerangka evaluasi** yang kuat agar hasilnya dapat dipercaya dan siap dikembangkan ke pendekatan yang lebih canggih bila diperlukan.
+
 
 
